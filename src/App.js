@@ -1,15 +1,28 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
+import {Home, TourApp, Error} from './pages';
+import "./App.css";
+import UnityPlaceholder from "./components/UnityPlaceholder";
+import Navbar from "./components/Navbar";
 
-function App() {
-  return (
-    <div className="App">
-        <p>
-        Test
-        </p>
+const App = () => {
 
-    </div>
-  );
+  return <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/tour" exact>
+            <TourApp />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </>
 }
 
 export default App;

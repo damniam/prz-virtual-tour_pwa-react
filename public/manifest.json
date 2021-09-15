@@ -1,25 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Wirtualny Spacer PRz WEII",
+  "short_name": "Tour PRz",
+  "description": "Progressive Web App z wirtualnym spacerem po Politechnice Rzeszowskiej WEII z elementami gry",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "images/favicon.png",
+      "sizes": "100x100",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "images/logoApp.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "theme_color": "#47959A",
+  "background_color": "#47959A"
 }
