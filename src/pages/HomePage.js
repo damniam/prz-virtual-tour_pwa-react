@@ -5,9 +5,10 @@ import Information from "../components/Information";
 import Contact from "../components/Contact";
 import styled from "styled-components";
 import HeroSection from "../components/HeroSection";
+import Navbar from "../components/Navbar";
 
 const Wrapper = styled.main`
-  width: 50vw;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -18,10 +19,11 @@ const Wrapper = styled.main`
 function Home() {
   return (
     <>
+    <Navbar />
       <HeroSection />
       <Wrapper>
         <HorizontalLine />
-        <Information />
+        <Information/>
         <HorizontalLine />
         <Localization />
         <HorizontalLine />

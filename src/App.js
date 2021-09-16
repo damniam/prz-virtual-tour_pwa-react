@@ -9,7 +9,6 @@ const App = () => {
 
   return <>
       <Router>
-        <Navbar />
         <Switch>
           <Route path="/" exact>
             <Home />

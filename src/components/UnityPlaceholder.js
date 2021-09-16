@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Unity, { UnityContext } from "react-unity-webgl";
-import "./UnityPlaceholder.css"
+import styled from "styled-components";
+
+
 const unityContext = new UnityContext({
   loaderUrl: "Build/BuildTour.loader.js",
   dataUrl: "Build/BuildTour.data",
@@ -8,9 +10,16 @@ const unityContext = new UnityContext({
   codeUrl: "Build/BuildTour.wasm",
 });
 
+const Container = styled.div`
+  margin: 0 auto;
+  width: 1366px;
+  height: 788px;
+  background-color: blue;
+  padding: 10px;
+`;
+
 
 function UnityPlaceholder() {
-    
     
      useEffect(function () {
        unityContext.on("progress", function (progression) {});
@@ -21,7 +30,7 @@ function UnityPlaceholder() {
      }, []);
   
     return (
-      <div className="container">
+      <Container>
         <Unity
           unityContext={unityContext}
           style={{
@@ -31,7 +40,7 @@ function UnityPlaceholder() {
             background: "grey",
           }}
         />
-      </div>
+      </Container>
     );
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledWrapperHr = styled.div`
-    padding: 5rem;
+    padding: 3rem;
 `
 
 function HorizontalLine() {

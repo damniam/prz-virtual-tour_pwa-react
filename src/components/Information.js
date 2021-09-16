@@ -1,8 +1,15 @@
 import React from "react";
+import styled from "styled-components";
+
+
+const Wrapper = styled.div`
+  /* padding: 2rem 0; */
+`;
+
 
 function Information() {
   return (
-    <div>
+    <Wrapper id="information">
       <h2>Informacje</h2>
       <span>
         Politechnika Rzeszowska W budynku A Politechniki Rzeszowskiej znajdują
@@ -16,7 +23,7 @@ function Information() {
         wystarczy przytrzymać lewy przycisk myszy i poruszać kursorem w wybranym
         kierunku. Zapraszamy!
       </span>
-    </div>
+    </Wrapper>
   );
 }
 
