@@ -1,15 +1,26 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
+import ContactForm from './ContactForm';
+
+const Wrapper = styled.div`
+  padding: 2rem 0;
+  width: 100%;
+`;
+
+const StyledParagraph = styled.p`
+  padding-bottom: 1rem;
+`
 
 function Contact() {
     return (
-      <div id="contact">
-        <h2>Contact</h2>
-        <span>
-          Pariatur duis sint esse magna esse. Velit id sint enim officia aute
-          sunt adipisicing. Nulla amet in ipsum occaecat Lorem officia magna in.
-          Consequat labore mollit velit culpa dolor do nisi ullamco sit.
-        </span>
-      </div>
+      <Wrapper id="contact">
+        <h2 className="noselect">Kontakt</h2>
+        <StyledParagraph>
+          W przypadku problemów z działaniem aplikacji wirtualnego spaceru lub
+          innych zastrzeń proszę o kontakt za pośrednictwem formularza.
+        </StyledParagraph>
+        <ContactForm />
+      </Wrapper>
     );
 }
 

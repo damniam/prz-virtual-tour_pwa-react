@@ -6,10 +6,8 @@ import LogoWEII from '../assets/WEII_Logo.png'
 
 const Image = styled.img`
     width: 150px;
-
-
     @media screen and (min-width: 1024px){
-        width: 200px;
+        width: 160px;
     }
 `;
 

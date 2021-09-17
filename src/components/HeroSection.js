@@ -39,7 +39,7 @@ const ImageHolder = styled.div`
 
 const StyledHeader = styled.h1`
   /* display: inline-block; */
-
+  color: var(--clr-white);
   text-transform: none;
   letter-spacing: 0rem;
   font-size: 1.2rem;

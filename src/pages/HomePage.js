@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import styled from "styled-components";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Wrapper = styled.main`
   width: 80%;
@@ -14,21 +15,31 @@ const Wrapper = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
+
+  @media (min-width: 1440px) {
+    width: 40%;
+  }
 `;
 
 function Home() {
   return (
     <>
-    <Navbar />
+      <Navbar />
       <HeroSection />
       <Wrapper>
         <HorizontalLine />
-        <Information/>
+        <Information />
         <HorizontalLine />
         <Localization />
         <HorizontalLine />
         <Contact />
+        <HorizontalLine />
       </Wrapper>
+      <Footer/>
     </>
   );
 }
