@@ -9,7 +9,7 @@ import Information from "../components/Information";
 import Contact from "../components/Contact";
 
 const StyledAppWrapper = styled.body`
-  padding: 12rem 0;
+  padding: 6rem 0;
   background-color: var(--clr-black);
 
   // For mobile
@@ -30,14 +30,14 @@ const StyledAppWrapper = styled.body`
   }
 `;
 const PortraitOrientation = styled.div`
-   @media all and (orientation:portrait) {
+   @media all and (max-width: 1024px) and (orientation:portrait) {
    /* Style adjustments for portrait mode goes here */
    display: flex;
    color: white;
 
    }
 
-   @media all and (orientation:landscape) {
+   @media all and (min-width: 1024px) and (orientation:landscape) {
      /* Style adjustments for landscape mode goes here */
      display: none;
    }

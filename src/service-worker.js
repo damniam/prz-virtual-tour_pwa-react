@@ -21,6 +21,11 @@ clientsClaim();
 // even if you decide not to use precaching. See https://cra.link/PWA
 precacheAndRoute(self.__WB_MANIFEST);
 
+
+// importScripts(
+//   "https://runtime.imagekit.io/0gr1w07bzr6iu/v1/js/network-based-adaption.js?v=" +
+//     new Date().getTime()
+// );
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
 // https://developers.google.com/web/fundamentals/architecture/app-shell
@@ -59,6 +64,7 @@ registerRoute(
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
   })
+  
 );
 
 // This allows the web app to trigger skipWaiting via
