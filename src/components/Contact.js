@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ContactForm from './ContactForm';
 
 const Wrapper = styled.div`
-  padding: 2rem 0;
+  padding: 3rem 0;
   width: 100%;
 `;
 

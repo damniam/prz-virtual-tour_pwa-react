@@ -142,7 +142,7 @@ const ContactForm = () => {
             onChange={handleOnChange}
             required
             value={inputs.message}
-            placeholder="Treść wiadomości tutaj..."
+            placeholder="Treść wiadomości..."
            
           />
           <div className="pt-12 text-center md:text-right">

@@ -12,7 +12,7 @@ const NavContainer = styled.nav`
   align-items: center;
   padding: 0px 40px;
   height: 4rem;
-  z-index: 6;
+  z-index:100;
   width: 100%;
 
   @media (min-width: 1024px) {

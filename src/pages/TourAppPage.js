@@ -7,52 +7,22 @@ import HorizontalLine from "../components/HorizontalLine";
 import Localization from "../components/Localization";
 import Information from "../components/Information";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const StyledAppWrapper = styled.body`
-  padding: 6rem 0;
+  padding: 4.5rem 0;
   background-color: var(--clr-black);
 
-  // For mobile
-  @media screen and (max-width: 767px) {
-    //..This is basic media query for respective device.In to this media query  CSS code cover the both view landscape and portrait view.
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    padding: 6rem 0;
   }
-
-  @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-    //..This orientation media query. In to this orientation media query you can specify more about CSS code for landscape view.
-  }
-
-  //For tablets
-  @media screen and (max-width: 1024px) {
-    //..This is basic media query for respective device.In to this media query  CSS code cover the both view landscape and portrait view.
-  }
-  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    //..This orientation media query. In to this orientation media query you can specify more about CSS code for landscape view.
+  @media screen and (min-width: 1024px) {
+    padding: 8rem 0;
   }
 `;
-const PortraitOrientation = styled.div`
-   @media all and (max-width: 1024px) and (orientation:portrait) {
-   /* Style adjustments for portrait mode goes here */
-   display: flex;
-   color: white;
-
-   }
-
-   @media all and (min-width: 1024px) and (orientation:landscape) {
-     /* Style adjustments for landscape mode goes here */
-     display: none;
-   }
-`;
-
-// @media all and (orientation:portrait) {
-// /* Style adjustments for portrait mode goes here */
-// }
-
-// @media all and (orientation:landscape) {
-//   /* Style adjustments for landscape mode goes here */
-// }
 
 const Wrapper = styled.main`
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -74,9 +44,6 @@ function TourApp() {
       <Navbar />
       <GlobalStyle />
       <StyledAppWrapper>
-        <PortraitOrientation>
-          <span>Aplikacja działa tylko w trybie horyzntalnym, obróć telefon, aby uruchomić aplikacje.</span>
-        </PortraitOrientation>
         <UnityPlaceholder />
       </StyledAppWrapper>
       <Wrapper>
@@ -88,6 +55,7 @@ function TourApp() {
         <Contact />
         <HorizontalLine />
       </Wrapper>
+      <Footer />
     </>
   );
 }

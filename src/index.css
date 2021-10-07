@@ -285,7 +285,7 @@ Global Classes
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
-    z-index: 5;
+    z-index: 105;
     align-content: center;
     padding-left: 0px;
   }
