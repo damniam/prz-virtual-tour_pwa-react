@@ -1,54 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import outside from "../assets/outside.png";
-import outside3 from "../assets/outside3.png";
-import outside2 from "../assets/outside2.png";
 import { PlayArrowRounded } from "@material-ui/icons";
 
-const StyledImageWrapper = styled.div`
-  height: 100%;
+
+const StyledHeroWrapper = styled.div` 
+  width: 100%;
+  height: 85vh;
+  background-image: url("https://ik.imagekit.io/laepnmjivje/outside_C8C-8MsgUY.webp");
+  background-color: RGBA(17, 17, 17, .85);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
   position: relative;
+  margin-top: 4rem;
 
-
-  .image-size {
-    width: 100%;
-    mix-blend-mode: multiply;
-  }
-
-  @media screen and (min-width: 768px) {
-    height: 80%;
-  }
-
-  @media screen and (min-width: 1060px) {
-    height: 60%;
-  }
-
-  @media screen and (min-width: 1440px) {
-    height: 50%;
-  }
-
-  @media screen and (min-width: 2560px) {
-    height: 30%;
-  }
+`;
+const ResizeImage = styled.div`
+  width: 100vw;
+  height: 85vh;
+  overflow: hidden;
 `;
 
-const ImageHolder = styled.div`
-  background-color: #3d3d3d;
-`;
 
 const StyledHeader = styled.h1`
   /* display: inline-block; */
   color: var(--clr-white);
   text-transform: none;
   letter-spacing: 0rem;
-  font-size: 1.2rem;
-
+  font-size: 1.5rem;
 
   @media screen and (min-width: 740px) {
-    font-size: 2.5rem;
+    font-size: 3rem;
     max-width: 800px;
     padding-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 960px) and (orientation: landscape) {
+    font-size: 1.8rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -75,10 +65,16 @@ const StyledParagraph = styled.p`
   max-width: 200px;
   padding-bottom: 0.5rem;
 
+  @media all and (max-width: 960px) and (orientation: landscape) {
+    font-size: 0.7rem;
+    max-width: 700px;
+    padding-bottom: 0.2rem;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 1rem;
     max-width: 500px;
-    padding-bottom: 2rem;
+    /* padding-bottom: 2rem; */
   }
 
   @media screen and (min-width: 1024px) {
@@ -147,80 +143,73 @@ const StyledContent = styled.div`
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   z-index: 2;
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  align-items: center;
 `;
 
 const ContentCentered = styled.div`
   width: 80%;
-  padding-top: 3rem;
-
-  @media screen and (min-width: 768px) {
-    padding-top: 5rem;
-  }
-
-  @media screen and (min-width: 1024px) {
-    padding-top: 10rem;
-  }
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media screen and (min-width: 1440px) {
-    padding-top: 15rem;
     width: 65%;
   }
 
   @media screen and (min-width: 2565px) {
-    padding-top: 30rem;
+    width: 50%;
   }
 `;
 
 function HeroSection() {
   return (
-
-      <StyledImageWrapper id="tour">
-        <ImageHolder>
-          <StyledContent>
-            <ContentCentered>
-              <StyledHeader>
-                Wirtualny spacer Politechniki Rzeszowskiej po Wydziałe
-                Elektrotechniki i Informatyki
-              </StyledHeader>
-              <StyledParagraph>
-                Dzięki wirtualnemu spacerowi już teraz możesz zwiedzić budynek
-                Politechniki Rzeszowskiej. Sprawdź jak wygladają wnetrza sal
-                wykładowych, laboratoria i pracownie. Weź udział w grze, której
-                zadaniem jest dostanie się do odpowiedniej sali i wykonanie
-                ćwiczenia labolatoryjnego.
-              </StyledParagraph>
-              <Link to="/tour">
-                <StyledButton>
-                  Uruchom aplikacje
-                  <PlayArrowRounded className="arrow-icon" />
-                </StyledButton>
-              </Link>
-            </ContentCentered>
-          </StyledContent>
-          <picture>
-            <source
-              className="image-size"
-              media="(min-width: 1062px)"
-              srcSet={outside}
-            />
-            <source
-              className="image-size"
-              media="(min-width: 480px)"
-              srcSet={outside2}
-            />
-            <img
-              className="image-size"
-              src={outside3}
-              alt="IfItDoesntMatchAnyMedia"
-            />
-          </picture>
-        </ImageHolder>
-      </StyledImageWrapper>
-
+    <StyledHeroWrapper id="tour">
+        <StyledContent>
+          <ContentCentered>
+            <StyledHeader>
+              Wirtualny spacer Politechniki Rzeszowskiej po Wydziałe
+              Elektrotechniki i Informatyki
+            </StyledHeader>
+            <StyledParagraph>
+              Dzięki wirtualnemu spacerowi już teraz możesz zwiedzić budynek
+              Politechniki Rzeszowskiej. Sprawdź jak wygladają wnetrza sal
+              wykładowych, laboratoria i pracownie. Weź udział w grze, której
+              zadaniem jest dostanie się do odpowiedniej sali i wykonanie
+              ćwiczenia labolatoryjnego.
+            </StyledParagraph>
+            <Link to="/tour">
+              <StyledButton>
+                Uruchom aplikacje
+                <PlayArrowRounded className="arrow-icon" />
+              </StyledButton>
+            </Link>
+          </ContentCentered>
+        </StyledContent>
+        {/* <picture>
+          <source
+          className="image-size"
+          media="(min-width: 1062px)"
+          src="url(https://ik.imagekit.io/laepnmjivje/outside_C8C-8MsgUY.webp)"
+          />
+          <source
+          className="image-size"
+          media="(min-width: 480px)"
+          srcSet={outside2}
+          />
+          <img
+          className="image-size"
+          src={outside3}
+          alt="IfItDoesntMatchAnyMedia"
+          />
+        </picture> */}
+        <ResizeImage>
+        </ResizeImage>
+    </StyledHeroWrapper>
   );
 }
 

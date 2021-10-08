@@ -29,7 +29,8 @@ const MenuWrapper = styled.div`
   flex-direction: column;
   color: var(--clr-white);
   padding: 0 2rem;
-  h5 {
+  h3 {
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 500;
     color: var(--clr-white);
@@ -87,7 +88,7 @@ function Footer() {
       <Logo />
       <SideMenus>
         <MenuWrapper>
-          <h5 className="noselect">Menu</h5>
+          <h3 className="noselect">Menu</h3>
           <List>
             <ListItem>
               <Link
@@ -140,7 +141,7 @@ function Footer() {
           </List>
         </MenuWrapper>
         <MenuWrapper>
-          <h5>Social Media</h5>
+          <h3 className="noselect">Social Media</h3>
           <List>
             <ListItem>
               <StyledAnchor href="#">

@@ -14,6 +14,8 @@ const NavContainer = styled.nav`
   height: 4rem;
   z-index:100;
   width: 100%;
+  top: 0;
+  left: 0;
 
   @media (min-width: 1024px) {
     height: 4.5rem;

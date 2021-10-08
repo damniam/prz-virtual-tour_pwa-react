@@ -5,10 +5,12 @@ import LogoWEII from '../assets/WEII_Logo.png'
  
 
 const Image = styled.img`
-    width: 150px;
-    @media screen and (min-width: 1024px){
-        width: 160px;
-    }
+  width: 140px;
+  height: 42px;
+  @media screen and (min-width: 1024px) {
+    width: 160px;
+    height: 48px;
+  }
 `;
 
 

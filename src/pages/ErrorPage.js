@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
-import warningImage from '../assets/warning.png';
+import warningImage from '../assets/warning.webp';
  
 const Wrapper = styled.main`
   background: var(--clr-white);
