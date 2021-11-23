@@ -1,9 +1,10 @@
-const CACHE_NAME = "version-1";
+const CACHE_NAME = "virtual-tour-prz";
 const urlsToCache = ["index.html", "offline.html"];
 
 const self = this;
 
 // self represent serwice worker
+
 
 // Install SW
 self.addEventListener("install", (event) => {
@@ -27,3 +28,17 @@ self.addEventListener("fetch", (event) => {
 
 // Activate the SW
 self.addEventListener("active", (event) => {});
+self.addEventListener("activate", (event) => {
+  var cacheWhitelist = ["pwa-task-manager"];
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});

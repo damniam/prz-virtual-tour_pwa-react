@@ -12,6 +12,12 @@
       "src": "images/logoApp.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "images/logoApp2.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/index.html",

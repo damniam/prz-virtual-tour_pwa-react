@@ -22,7 +22,6 @@ const Container = styled.div`
   @media screen and (min-width: 600px) {
     width: 480px;
     height: 270px;
-    border: 1px solid white;
   }
 
   @media screen and (min-width: 720px) {
@@ -47,6 +46,9 @@ const Container = styled.div`
 `;
 
 const UnityWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
   @media all and (max-width: 720px) and (orientation: portrait) {
     display: none;
   }
@@ -121,8 +123,8 @@ function UnityPlaceholder() {
           unityContext={unityContext}
           style={{
             margin: "0 auto",
-            height: "100%",
             width: "100%",
+            height: "100%",
             background: "#111",
           }}
         />
