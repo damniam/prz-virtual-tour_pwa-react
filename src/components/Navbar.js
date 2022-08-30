@@ -12,7 +12,7 @@ const NavContainer = styled.nav`
   align-items: center;
   padding: 0px 40px;
   height: 4rem;
-  z-index:100;
+  z-index: 100;
   width: 100%;
   top: 0;
   left: 0;
@@ -28,7 +28,6 @@ const NavWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
 `;
-
 
 const MenuMobile = styled.div`
   display: block;

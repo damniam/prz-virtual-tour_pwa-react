@@ -3,26 +3,23 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { PlayArrowRounded } from "@material-ui/icons";
 
-
-const StyledHeroWrapper = styled.div` 
+const StyledHeroWrapper = styled.div`
   width: 100%;
   height: 85vh;
   background-image: url("https://ik.imagekit.io/laepnmjivje/outside_C8C-8MsgUY.webp");
-  background-color: RGBA(17, 17, 17, .85);
+  background-color: RGBA(17, 17, 17, 0.85);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   position: relative;
   margin-top: 4rem;
-
 `;
 const ResizeImage = styled.div`
   width: 100vw;
   height: 85vh;
   overflow: hidden;
 `;
-
 
 const StyledHeader = styled.h1`
   /* display: inline-block; */
@@ -169,28 +166,28 @@ const ContentCentered = styled.div`
 function HeroSection() {
   return (
     <StyledHeroWrapper id="tour">
-        <StyledContent>
-          <ContentCentered>
-            <StyledHeader>
-              Wirtualny spacer Politechniki Rzeszowskiej po Wydziałe
-              Elektrotechniki i Informatyki
-            </StyledHeader>
-            <StyledParagraph>
-              Dzięki wirtualnemu spacerowi już teraz możesz zwiedzić budynek
-              Politechniki Rzeszowskiej. Sprawdź jak wygladają wnetrza sal
-              wykładowych, laboratoria i pracownie. Weź udział w grze, której
-              zadaniem jest dostanie się do odpowiedniej sali i wykonanie
-              ćwiczenia labolatoryjnego.
-            </StyledParagraph>
-            <Link to="/tour">
-              <StyledButton>
-                Uruchom aplikacje
-                <PlayArrowRounded className="arrow-icon" />
-              </StyledButton>
-            </Link>
-          </ContentCentered>
-        </StyledContent>
-        {/* <picture>
+      <StyledContent>
+        <ContentCentered>
+          <StyledHeader>
+            Wirtualny spacer Politechniki Rzeszowskiej po Wydziałe
+            Elektrotechniki i Informatyki
+          </StyledHeader>
+          <StyledParagraph>
+            Dzięki wirtualnemu spacerowi już teraz możesz zwiedzić budynek
+            Politechniki Rzeszowskiej. Sprawdź jak wygladają wnetrza sal
+            wykładowych, laboratoria i pracownie. Weź udział w grze, której
+            zadaniem jest dostanie się do odpowiedniej sali i wykonanie
+            ćwiczenia labolatoryjnego.
+          </StyledParagraph>
+          <Link to="/tour">
+            <StyledButton>
+              Uruchom aplikacje
+              <PlayArrowRounded className="arrow-icon" />
+            </StyledButton>
+          </Link>
+        </ContentCentered>
+      </StyledContent>
+      {/* <picture>
           <source
           className="image-size"
           media="(min-width: 1062px)"
@@ -207,8 +204,7 @@ function HeroSection() {
           alt="IfItDoesntMatchAnyMedia"
           />
         </picture> */}
-        <ResizeImage>
-        </ResizeImage>
+      <ResizeImage></ResizeImage>
     </StyledHeroWrapper>
   );
 }
