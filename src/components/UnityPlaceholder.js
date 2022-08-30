@@ -3,10 +3,10 @@ import Unity, { UnityContext } from "react-unity-webgl";
 import styled from "styled-components";
 
 const unityContext = new UnityContext({
-  loaderUrl: "Build/BuildTour.loader.js",
-  dataUrl: "Build/BuildTour.data",
-  frameworkUrl: "Build/BuildTour.framework.js",
-  codeUrl: "Build/BuildTour.wasm",
+  loaderUrl: "app/app.loader.js",
+  dataUrl: "app/app.data",
+  frameworkUrl: "app/app.framework.js",
+  codeUrl: "app/app.wasm",
 });
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ const Container = styled.div`
   position: relative;
   width: 300px;
   height: 400px;
-  
+
   @media screen and (min-width: 600px) {
     width: 480px;
     height: 270px;
