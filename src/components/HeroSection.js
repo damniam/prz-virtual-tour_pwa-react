@@ -165,7 +165,7 @@ const ContentCentered = styled.div`
 
 function HeroSection() {
   return (
-    <StyledHeroWrapper id="tour">
+    <StyledHeroWrapper id='tour'>
       <StyledContent>
         <ContentCentered>
           <StyledHeader>
@@ -179,32 +179,14 @@ function HeroSection() {
             zadaniem jest dostanie się do odpowiedniej sali i wykonanie
             ćwiczenia labolatoryjnego.
           </StyledParagraph>
-          <Link to="/tour">
+          <Link to='/tour'>
             <StyledButton>
               Uruchom aplikacje
-              <PlayArrowRounded className="arrow-icon" />
+              <PlayArrowRounded className='arrow-icon' />
             </StyledButton>
           </Link>
         </ContentCentered>
       </StyledContent>
-      {/* <picture>
-          <source
-          className="image-size"
-          media="(min-width: 1062px)"
-          src="url(https://ik.imagekit.io/laepnmjivje/outside_C8C-8MsgUY.webp)"
-          />
-          <source
-          className="image-size"
-          media="(min-width: 480px)"
-          srcSet={outside2}
-          />
-          <img
-          className="image-size"
-          src={outside3}
-          alt="IfItDoesntMatchAnyMedia"
-          />
-        </picture> */}
-      <ResizeImage></ResizeImage>
     </StyledHeroWrapper>
   );
 }

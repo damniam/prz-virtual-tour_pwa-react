@@ -1,26 +1,35 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import {Home, TourApp, Error} from './pages';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Home, TourApp, Error } from "./pages";
 import "./App.css";
-
+import { useCookies } from "react-cookie";
 
 const App = () => {
+  const [cookies, setCookie, removeCookie] = useCookies();
 
-  return <>
+  useEffect(() => {
+    if (cookies.user === "userCookies") return;
+    removeCookie();
+    setCookie("user", "userCookies", { path: "/" }, { maxAge: 360000 });
+  }, []);
+
+  return (
+    <>
       <Router>
         <Switch>
-          <Route path="/" exact>
+          <Route path='/' exact>
             <Home />
           </Route>
-          <Route path="/tour" exact>
+          <Route path='/tour' exact>
             <TourApp />
           </Route>
-          <Route path="*">
+          <Route path='*'>
             <Error />
           </Route>
         </Switch>
       </Router>
     </>
-}
+  );
+};
 
 export default App;
