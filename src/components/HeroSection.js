@@ -169,8 +169,8 @@ function HeroSection() {
       <StyledContent>
         <ContentCentered>
           <StyledHeader>
-            Wirtualny spacer Politechniki Rzeszowskiej po Wydziałe
-            Elektrotechniki i Informatyki
+            Wirtualny Spacer po Wydziale Elektrotechniki i Informatyki
+            Politechniki Rzeszowskiej
           </StyledHeader>
           <StyledParagraph>
             Dzięki wirtualnemu spacerowi już teraz możesz zwiedzić budynek
