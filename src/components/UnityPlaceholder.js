@@ -39,9 +39,14 @@ const Container = styled.div`
     height: 576px;
   }
 
+  @media screen and (min-width: 1400px) {
+    width: 1358px;
+    height: 764px;
+  }
+
   @media screen and (min-width: 1900px) {
-    width: 1536px;
-    height: 864px;
+    width: 1595px;
+    height: 897px;
   }
 `;
 
@@ -130,7 +135,7 @@ function UnityPlaceholder() {
         />
         {!isLoading ? (
           <SpinnerWrapper>
-            <div className="loader">...</div>
+            <div className='loader'>...</div>
             <StyledSpan>Ładowanie, prosze czekać...</StyledSpan>
           </SpinnerWrapper>
         ) : null}
