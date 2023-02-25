@@ -108,7 +108,6 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: 720px) {
-    margin-top: 2rem;
     width: 607px;
     height: 342px;
   }
@@ -119,23 +118,26 @@ const Container = styled.div`
   }
 
   @media screen and (min-width: 1200px) {
-    width: 1184px;
-    height: 666px;
+    margin-top: -2rem;
+    width: 960px;
+    height: 540px;
   }
 
   @media screen and (min-width: 1440px) {
-    width: 1358px;
-    height: 764px;
+    width: 1244px;
+    height: 700px;
   }
 
   @media screen and (min-width: 1600px) {
-    width: 1536px;
-    height: 864px;
+    margin-top: -1rem;
+    width: 1424px;
+    height: 801px;
   }
 
-  @media screen and (min-width: 1920px) {
-    width: 1920px;
-    height: 1080px;
+  @media screen and (min-width: 1925px) {
+    margin-top: 2rem;
+    width: 1606px;
+    height: 904px;
   }
 `;
 

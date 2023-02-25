@@ -5,12 +5,16 @@ import "./App.css";
 import { useCookies } from "react-cookie";
 
 const App = () => {
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const [cookies, setCookie] = useCookies();
 
   useEffect(() => {
-    if (cookies.user === "userUpdate3") return;
-    removeCookie();
-    setCookie("user", "userUpdate3", { path: "/" }, { maxAge: 360000 });
+    if (cookies.virtaulTour === "true") return;
+    document.cookie.split(";").forEach(function (c) {
+      document.cookie = c
+        .replace(/^ +/, "")
+        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+    setCookie("virtaulTour", "true", { path: "/" }, { maxAge: 360000 });
   }, []);
 
   return (
