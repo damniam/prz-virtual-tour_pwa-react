@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   width: 100%;
   background-color: var(--clr-primary-1);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -159,6 +159,11 @@ function Footer() {
           </MenuWrapper>
         </SideMenus>
       </FooterContainer>
+      <div>
+        <p style={{ color: "white", fontSize: "12px" }}>
+          &copy; 2023 - Strona stworzona przez Damiana Działo
+        </p>
+      </div>
     </Wrapper>
   );
 }
