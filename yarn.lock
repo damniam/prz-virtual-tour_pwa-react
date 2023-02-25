@@ -10016,10 +10016,10 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react-unity-webgl@^8.4.10":
-  "integrity" "sha512-4PHTEwUQd70IJAy+jdVvHM+A6No9GMTmA/PCFOWkgpy2g0SlKJF3LREt92TfhttnMJ+CLL9iF8X03wMBvNvsjA=="
-  "resolved" "https://registry.npmjs.org/react-unity-webgl/-/react-unity-webgl-8.8.0.tgz"
-  "version" "8.8.0"
+"react-unity-webgl@^9.4.0":
+  "integrity" "sha512-0R/Z/SPAth1pKIaykgZrweASqt+Y0Sf+ToO8TuX/D1goExK6G3gmGIln7HZl/FXPva0Mz/75qLkYEZE23mdhAg=="
+  "resolved" "https://registry.npmjs.org/react-unity-webgl/-/react-unity-webgl-9.4.0.tgz"
+  "version" "9.4.0"
 
 "react@^17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="

@@ -8,7 +8,7 @@ const NavContainer = styled.nav`
   position: fixed;
   display: flex;
   background: var(--clr-primary-1);
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0px 40px;
   height: 4rem;
@@ -27,6 +27,7 @@ const NavWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 1440px;
 `;
 
 const MenuMobile = styled.div`
@@ -45,13 +46,13 @@ const Navbar = () => {
   return (
     <NavContainer>
       <NavWrapper>
-        <Logo className="logo" />
+        <Logo className='logo' />
 
         <ul className={click ? "nav-options active" : "nav-options"}>
-          <li className="option">
+          <li className='option'>
             <Link
-              activeClass="active"
-              to="tour"
+              activeClass='active'
+              to='tour'
               spy={true}
               smooth={true}
               offset={-70}
@@ -61,10 +62,10 @@ const Navbar = () => {
               Wirtualny Spacer
             </Link>
           </li>
-          <li className="option">
+          <li className='option'>
             <Link
-              activeClass="active"
-              to="information"
+              activeClass='active'
+              to='information'
               spy={true}
               smooth={true}
               offset={-70}
@@ -74,10 +75,10 @@ const Navbar = () => {
               Informacje
             </Link>
           </li>
-          <li className="option">
+          <li className='option'>
             <Link
-              activeClass="active"
-              to="localization"
+              activeClass='active'
+              to='localization'
               spy={true}
               smooth={true}
               offset={-70}
@@ -87,10 +88,10 @@ const Navbar = () => {
               Lokalizacja
             </Link>
           </li>
-          <li className="option">
+          <li className='option'>
             <Link
-              activeClass="active"
-              to="contact"
+              activeClass='active'
+              to='contact'
               spy={true}
               smooth={true}
               offset={-70}
@@ -103,7 +104,7 @@ const Navbar = () => {
         </ul>
       </NavWrapper>
 
-      <MenuMobile className="mobile-menu" onClick={handleClick}>
+      <MenuMobile className='mobile-menu' onClick={handleClick}>
         {click ? <Close /> : <Menu />}
       </MenuMobile>
     </NavContainer>

@@ -3,25 +3,14 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import { Link } from "react-scroll";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Wrapper = styled.div`
   width: 100%;
   background-color: var(--clr-primary-1);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 40px 40px;
-
-  @media (max-width: 768px) {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-  }
+  justify-content: center;
+  align-items: center;
 `;
 
 const MenuWrapper = styled.div`
@@ -42,14 +31,14 @@ const MenuWrapper = styled.div`
 `;
 
 const SideMenus = styled.div`
-    display: flex;
-    flex-direction: row;
-    width:70%;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-evenly;
 
-    @media (max-width: 768px) {
-        width: 100%;
-    }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 const List = styled.ul`
   display: flex;
@@ -82,100 +71,94 @@ const StyledAnchor = styled.a`
   gap: 0.5rem;
 `;
 
+const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1400px;
+  width: 100%;
+  padding: 2rem 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+`;
+
 function Footer() {
   return (
     <Wrapper>
-      <Logo />
-      <SideMenus>
-        <MenuWrapper>
-          <h3 className="noselect">Menu</h3>
-          <List>
-            <ListItem>
-              <Link
-                activeClass="active"
-                to="tour"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Wirtualny Spacer
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                activeClass="active"
-                to="information"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Informacje
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                activeClass="active"
-                to="localization"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Lokalizacja
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                activeClass="active"
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Kontakt
-              </Link>
-            </ListItem>
-          </List>
-        </MenuWrapper>
-        <MenuWrapper>
-          <h3 className="noselect">Social Media</h3>
-          <List>
-            <ListItem>
-              <StyledAnchor href="#">
-                <FacebookIcon />
-                Facebook
-              </StyledAnchor>
-            </ListItem>
-            <ListItem>
-              <StyledAnchor href="#">
-                <TwitterIcon />
-                Twitter
-              </StyledAnchor>
-            </ListItem>
-            <ListItem>
-              <StyledAnchor href="#">
-                <LinkedInIcon />
-                LinkedIn
-              </StyledAnchor>
-            </ListItem>
-            <ListItem>
-              <StyledAnchor href="#">
-                <YouTubeIcon />
-                YouTube
-              </StyledAnchor>
-            </ListItem>
-            <ListItem>
-              <StyledAnchor href="#">
-                <InstagramIcon />
-                Instagram
-              </StyledAnchor>
-            </ListItem>
-          </List>
-        </MenuWrapper>
-      </SideMenus>
+      <FooterContainer>
+        <Logo />
+        <SideMenus>
+          <MenuWrapper>
+            <h3 className='noselect'>Menu</h3>
+            <List>
+              <ListItem>
+                <Link
+                  activeClass='active'
+                  to='tour'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  Wirtualny Spacer
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link
+                  activeClass='active'
+                  to='information'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  Informacje
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link
+                  activeClass='active'
+                  to='localization'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  Lokalizacja
+                </Link>
+              </ListItem>
+              <ListItem>
+                <Link
+                  activeClass='active'
+                  to='contact'
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  Kontakt
+                </Link>
+              </ListItem>
+            </List>
+          </MenuWrapper>
+          <MenuWrapper>
+            <h3 className='noselect'>Social Media</h3>
+            <List>
+              <ListItem>
+                <StyledAnchor href='https://www.facebook.com/profile.php?id=100068957352323'>
+                  <FacebookIcon />
+                  Facebook
+                </StyledAnchor>
+              </ListItem>
+            </List>
+          </MenuWrapper>
+        </SideMenus>
+      </FooterContainer>
     </Wrapper>
   );
 }

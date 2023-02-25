@@ -11,7 +11,7 @@ const App = () => {
     if (cookies.user === "userUpdate") return;
     removeCookie();
     setCookie("user", "userUpdate", { path: "/" }, { maxAge: 360000 });
-  }, []);
+  }, [cookies.user, removeCookie, setCookie]);
 
   return (
     <>

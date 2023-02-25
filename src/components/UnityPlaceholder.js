@@ -1,52 +1,121 @@
-import React, { useState, useEffect } from "react";
-import Unity, { UnityContext } from "react-unity-webgl";
+import React from "react";
+import { Unity, useUnityContext } from "react-unity-webgl";
 import styled from "styled-components";
 
-const unityContext = new UnityContext({
-  loaderUrl: "app/app.loader.js",
-  dataUrl: "app/app.data",
-  frameworkUrl: "app/app.framework.js",
-  codeUrl: "app/app.wasm",
-});
+function UnityPlaceholder() {
+  const { unityProvider, requestFullscreen, isLoaded } = useUnityContext({
+    loaderUrl: "app/app.loader.js",
+    dataUrl: "app/app.data",
+    frameworkUrl: "app/app.framework.js",
+    codeUrl: "app/app.wasm",
+  });
+
+  function handleClickEnterFullscreen() {
+    requestFullscreen(true);
+  }
+
+  return (
+    <Wrapper>
+      <Container>
+        <PortraitOrientation>
+          <StyledSpan>
+            Aplikacja dla urządzeń mobilnych działa tylko w trybie
+            horyzontalnym, obróć telefon, aby uruchomić aplikacje
+          </StyledSpan>
+        </PortraitOrientation>
+        <UnityWrapper>
+          <Unity
+            unityProvider={unityProvider}
+            style={{
+              margin: "0 auto",
+              width: "100%",
+              height: "100%",
+              background: "#111",
+            }}
+          />
+          {!isLoaded ? (
+            <SpinnerWrapper>
+              <div className='loader'>...</div>
+              <StyledSpan>Ładowanie, prosze czekać...</StyledSpan>
+            </SpinnerWrapper>
+          ) : null}
+        </UnityWrapper>
+        {!isLoaded ? null : (
+          <FullScreenBtn onClick={handleClickEnterFullscreen}>
+            Pełny ekran
+          </FullScreenBtn>
+        )}
+      </Container>
+    </Wrapper>
+  );
+}
+
+export default UnityPlaceholder;
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+`;
+
+const FullScreenBtn = styled.button`
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ddd;
+  background-color: #000;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: #0d0d0d;
+  }
+`;
 
 const Container = styled.div`
   margin: 0 auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
   width: 300px;
   height: 400px;
 
   @media screen and (min-width: 600px) {
-    width: 480px;
-    height: 270px;
+    width: 429px;
+    height: 241px;
   }
 
   @media screen and (min-width: 720px) {
-    width: 512px;
-    height: 288px;
+    margin-top: 2rem;
+    width: 607px;
+    height: 342px;
   }
 
   @media screen and (min-width: 1024px) {
-    width: 768px;
-    height: 432px;
+    width: 960px;
+    height: 540px;
   }
 
   @media screen and (min-width: 1200px) {
-    width: 1024px;
-    height: 576px;
+    width: 1184px;
+    height: 666px;
   }
 
-  @media screen and (min-width: 1400px) {
+  @media screen and (min-width: 1440px) {
     width: 1358px;
     height: 764px;
-  }
-
-  @media screen and (min-width: 1900px) {
-    width: 1595px;
-    height: 897px;
   }
 `;
 
@@ -102,46 +171,3 @@ const PortraitOrientation = styled.div`
     color: white;
   }
 `;
-
-function UnityPlaceholder() {
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(function () {
-    unityContext.on("loaded", () => {
-      setIsLoading(true);
-    });
-    unityContext.on("customEvent", function () {});
-    return function () {
-      unityContext.removeAllEventListeners();
-    };
-  }, []);
-  return (
-    <Container>
-      <PortraitOrientation>
-        <StyledSpan>
-          Aplikacja dla urządzeń mobilnych działa tylko w trybie horyzontalnym,
-          obróć telefon, aby uruchomić aplikacje
-        </StyledSpan>
-      </PortraitOrientation>
-      <UnityWrapper>
-        <Unity
-          unityContext={unityContext}
-          style={{
-            margin: "0 auto",
-            width: "100%",
-            height: "100%",
-            background: "#111",
-          }}
-        />
-        {!isLoading ? (
-          <SpinnerWrapper>
-            <div className='loader'>...</div>
-            <StyledSpan>Ładowanie, prosze czekać...</StyledSpan>
-          </SpinnerWrapper>
-        ) : null}
-      </UnityWrapper>
-    </Container>
-  );
-}
-
-export default UnityPlaceholder;

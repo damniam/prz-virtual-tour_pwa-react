@@ -15,11 +15,6 @@ const StyledHeroWrapper = styled.div`
   position: relative;
   margin-top: 4rem;
 `;
-const ResizeImage = styled.div`
-  width: 100vw;
-  height: 85vh;
-  overflow: hidden;
-`;
 
 const StyledHeader = styled.h1`
   /* display: inline-block; */
@@ -119,7 +114,7 @@ const StyledButton = styled.button`
     }
   }
   @media screen and (min-width: 1440px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 1.5rem 2.5rem;
   }
 
@@ -155,7 +150,7 @@ const ContentCentered = styled.div`
   justify-content: center;
 
   @media screen and (min-width: 1440px) {
-    width: 65%;
+    width: 55%;
   }
 
   @media screen and (min-width: 2565px) {
