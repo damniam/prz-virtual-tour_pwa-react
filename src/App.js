@@ -8,9 +8,9 @@ const App = () => {
   const [cookies, setCookie, removeCookie] = useCookies();
 
   useEffect(() => {
-    if (cookies.user === "userUpdate") return;
+    if (cookies.user === "userUpdate1") return;
     removeCookie();
-    setCookie("user", "userUpdate", { path: "/" }, { maxAge: 360000 });
+    setCookie("user", "userUpdate1", { path: "/" }, { maxAge: 360000 });
   }, [cookies.user, removeCookie, setCookie]);
 
   return (

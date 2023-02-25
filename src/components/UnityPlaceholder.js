@@ -15,45 +15,55 @@ function UnityPlaceholder() {
   }
 
   return (
-    <Wrapper>
-      <Container>
-        <PortraitOrientation>
-          <StyledSpan>
-            Aplikacja dla urządzeń mobilnych działa tylko w trybie
-            horyzontalnym, obróć telefon, aby uruchomić aplikacje
-          </StyledSpan>
-        </PortraitOrientation>
-        <UnityWrapper>
-          <Unity
-            unityProvider={unityProvider}
-            style={{
-              margin: "0 auto",
-              width: "100%",
-              height: "100%",
-              background: "#111",
-            }}
-          />
-          {!isLoaded ? (
-            <SpinnerWrapper>
-              <div className='loader'>...</div>
-              <StyledSpan>Ładowanie, prosze czekać...</StyledSpan>
-            </SpinnerWrapper>
-          ) : null}
-        </UnityWrapper>
+    <Placeholder>
+      <Wrapper>
+        <Container>
+          <PortraitOrientation>
+            <StyledSpan>
+              Aplikacja dla urządzeń mobilnych działa tylko w trybie
+              horyzontalnym, obróć telefon, aby uruchomić aplikacje
+            </StyledSpan>
+          </PortraitOrientation>
+          <UnityWrapper>
+            <Unity
+              unityProvider={unityProvider}
+              style={{
+                margin: "0 auto",
+                width: "100%",
+                height: "100%",
+                background: "#111",
+              }}
+            />
+            {!isLoaded ? (
+              <SpinnerWrapper>
+                <div className='loader'>...</div>
+                <StyledSpan>Ładowanie, prosze czekać...</StyledSpan>
+              </SpinnerWrapper>
+            ) : null}
+          </UnityWrapper>
+        </Container>
         {!isLoaded ? null : (
           <FullScreenBtn onClick={handleClickEnterFullscreen}>
             Pełny ekran
           </FullScreenBtn>
         )}
-      </Container>
-    </Wrapper>
+      </Wrapper>
+    </Placeholder>
   );
 }
 
 export default UnityPlaceholder;
 
-const Wrapper = styled.div`
+export const Placeholder = styled.div`
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Wrapper = styled.div`
+  width: min-content;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -116,6 +126,16 @@ const Container = styled.div`
   @media screen and (min-width: 1440px) {
     width: 1358px;
     height: 764px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 1536px;
+    height: 864px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    width: 1920px;
+    height: 1080px;
   }
 `;
 
